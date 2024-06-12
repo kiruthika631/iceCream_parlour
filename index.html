@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Seasonal Flavors</h2>
+<ul>
+    {% for flavor in flavors %}
+        <li>{{ flavor.name }} - {{ flavor.description }}
+            <a href="{{ url_for('add_to_cart', flavor_id=flavor.id) }}">Add to Cart</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

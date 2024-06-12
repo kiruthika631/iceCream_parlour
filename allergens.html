@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>Allergens</h2>
+<form method="POST">
+    <label for="allergen">New Allergen:</label>
+    <input type="text" id="allergen" name="allergen">
+    <button type="submit">Add Allergen</button>
+</form>
+<ul>
+    {% for allergen in allergens %}
+        <li>{{ allergen.name }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}
